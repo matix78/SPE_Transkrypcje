@@ -8,9 +8,6 @@ $(document).ready(function () {
     // Ścieżka do folderu z plikami
     var path = 'transkrypcje/';
 
-    // Twój token dostępowy z GitHub (musi mieć uprawnienia do dostępu do repozytorium)
-    var accessToken = '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';
-
     // Funkcja pobierająca i wyświetlająca zawartość pliku
     function showFileContent(downloadUrl) {
         $.ajax({
@@ -28,9 +25,6 @@ $(document).ready(function () {
     // Pobierz zawartość repozytorium za pomocą GitHub API z autoryzacją tokenem dostępowym
     $.ajax({
         url: 'https://api.github.com/repos/' + owner + '/' + repo + '/contents/' + path,
-        headers: {
-            Authorization: 'token ' + accessToken
-        },
         dataType: 'json',
         success: function (files) {
             // Iteruj przez każdy plik
@@ -51,7 +45,6 @@ $(document).ready(function () {
                         .append($('<span>').addClass('file-name').text('Nazwa transkrypcji: ' + fileName))
                         .append(' ')
                         .append($('<span>').addClass('show-link').append(downloadLink));
-
 
                     // Dodaj element do kontenera na wiadomości
                     $('#messagesContainer').append(listItem);
