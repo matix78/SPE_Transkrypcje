@@ -12,12 +12,9 @@ $(document).ready(function () {
     function showFileContent(downloadUrl) {
         $.ajax({
             url: downloadUrl,
-            headers: {
-                Authorization: 'token ' + accessToken
-            },
             dataType: 'text',
             success: function (content) {
-                $('#messagesContainer').html('<span>' + content + '</span>');
+                $('#messagesContainer').html(content);
             }
         });
     }
