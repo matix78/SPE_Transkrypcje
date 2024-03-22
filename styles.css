@@ -62,16 +62,15 @@ h2 {
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     padding: 10px;
-}
-
-/* Styl dla nazwy pliku */
-.file-name {
-    font-weight: bold;
+    text-align: center;
 }
 
 /* Styl dla linku "Pokaż" */
 .show-link {
-    color: #007bff;
     cursor: pointer;
-    text-decoration: none !important;
+}
+
+a {
+    text-decoration: none;
+    color: red;
 }
